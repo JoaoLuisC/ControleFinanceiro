@@ -23,13 +23,30 @@
         android:id="@+id/LoginPage_TextUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="@dimen/loginMenuMarginStart"
         android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/loginPage_textUser"
         android:textSize="@dimen/loginMenuTextSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginMainImage" />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="@dimen/loginMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/LoginPage_TextUser"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextUser">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="@dimen/loginMenuInputButtonWidth"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:hint="Inserir Nome de Usuario" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/LoginPage_TextPassword"
@@ -43,37 +60,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/LoginPage_TextUser"
-        app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextUser">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:hint="Inserir Nome de Usuario" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
-        android:layout_width="250dp"
+        android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/LoginPage_TextPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextPassword">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="250dp"
+            android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:hint="Inserir Senha" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/loginMenuInputButtonWidth"
+        android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:background="@drawable/button_background"
+        android:text="Entrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"

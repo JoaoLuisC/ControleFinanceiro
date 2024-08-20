@@ -4,6 +4,8 @@
     <!-- Dimens Pagina login_page.xml -->
     <dimen name="loginMenuImage_top_margin">40dp</dimen>
     <dimen name="loginMenuTextSize">20sp</dimen>
+    <dimen name="loginMenuMarginStart">60dp</dimen>
+    <dimen name="loginMenuInputButtonWidth">300dp</dimen>
 
 
 
