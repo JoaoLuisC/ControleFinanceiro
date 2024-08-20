@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    app:circularflow_defaultRadius="5dp"
+    android:background="#f9f9f9"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/LoginMainImage"
-        android:layout_width="244dp"
-        android:layout_height="234dp"
+        android:layout_width="250dp"
+        android:layout_height="240dp"
         android:layout_marginTop="@dimen/loginMenuImage_top_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -26,15 +25,13 @@
         android:layout_marginStart="@dimen/loginMenuMarginStart"
         android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/loginPage_textUser"
+        android:text="@string/loginMenu_textUser"
         android:textSize="@dimen/loginMenuTextSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginMainImage" />
 
-
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/loginMenuInputName"
         android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -45,7 +42,7 @@
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:hint="Inserir Nome de Usuario" />
+            android:hint="@string/loginMenu_hintInsertName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -54,13 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/loginPage_textPassword"
+        android:text="@string/loginMenu_textPassword"
         android:textSize="@dimen/loginMenuTextSize"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toStartOf="@+id/loginMenuInputName"
+        app:layout_constraintTop_toBottomOf="@+id/loginMenuInputName" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/loginMenuInputPassword"
         android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -71,18 +68,19 @@
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:hint="Inserir Senha" />
+            android:hint="@string/loginMenu_hintInsertPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginMenuButtonEnter"
         android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:background="@drawable/button_background"
-        android:text="Entrar"
+        android:text="@string/loginMenu_textButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/loginMenuInputPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginMenuInputPassword"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
