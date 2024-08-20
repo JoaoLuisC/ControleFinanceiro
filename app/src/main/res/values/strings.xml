@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ControleFinanceiro</string>
+
+
+    <string name="loginPage_textUser">Nome:</string>
+    <string name="loginPage_textPassword">Senha:</string>
+</resources>

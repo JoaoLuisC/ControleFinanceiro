@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dimens Pagina login_page.xml -->
+    <dimen name="loginMenuImage_top_margin">40dp</dimen>
+    <dimen name="loginMenuTextSize">20sp</dimen>
+
+
+
+
+</resources>
