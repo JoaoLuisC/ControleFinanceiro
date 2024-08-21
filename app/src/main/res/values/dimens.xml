@@ -5,10 +5,10 @@
     <dimen name="loginMenuImage_top_margin">40dp</dimen>
     <dimen name="loginMenuTextSize">20sp</dimen>
     <dimen name="loginMenuMarginStart">60dp</dimen>
-    <dimen name="loginMenuInputButtonWidth">300dp</dimen>
+    <dimen name="loginMenuInputButtonWidth">250dp</dimen>
 
     <!-- Dimens Pagina main_menu_page.xml -->
-    <dimen name="mainMenuInputButtonWidth">300dp</dimen>
+    <dimen name="mainMenuInputButtonWidth">250dp</dimen>
     <dimen name="mainMenuMarginStart">60dp</dimen>
 
 </resources>

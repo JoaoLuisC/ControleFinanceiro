@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/loginMenuMarginStart"
         android:layout_marginTop="40dp"
+        android:textColor="@color/black"
         android:fontFamily="sans-serif-medium"
         android:text="@string/loginMenu_textUser"
         android:textSize="@dimen/loginMenuTextSize"
@@ -35,12 +36,14 @@
         android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/LoginPage_TextUser"
         app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextUser">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:background="@drawable/button_background"
             android:hint="@string/loginMenu_hintInsertName" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -52,6 +55,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/loginMenu_textPassword"
+        android:textColor="@color/black"
         android:textSize="@dimen/loginMenuTextSize"
         app:layout_constraintStart_toStartOf="@+id/loginMenuInputName"
         app:layout_constraintTop_toBottomOf="@+id/loginMenuInputName" />
@@ -61,12 +65,14 @@
         android:layout_width="@dimen/loginMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/LoginPage_TextPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextPassword">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:background="@drawable/button_background"
             android:hint="@string/loginMenu_hintInsertPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -78,6 +84,7 @@
         android:layout_marginTop="56dp"
         android:background="@drawable/button_background"
         android:text="@string/loginMenu_textButton"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/loginMenuInputPassword"
         app:layout_constraintTop_toBottomOf="@+id/loginMenuInputPassword"
