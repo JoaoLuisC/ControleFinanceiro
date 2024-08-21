@@ -16,7 +16,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/main_menu_image_png" />
+        app:srcCompat="@drawable/main_menu_image_png"
+        android:contentDescription="@string/descriptionImagemLogin" />
 
     <TextView
         android:id="@+id/LoginPage_TextUser"
@@ -43,9 +44,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:background="@drawable/button_background"
-            android:hint="@string/loginMenu_hintInsertName" />
+            android:textColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -72,9 +73,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:background="@drawable/button_background"
-            android:hint="@string/loginMenu_hintInsertPassword" />
+            android:textColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton

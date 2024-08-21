@@ -10,5 +10,7 @@
     <!-- Dimens Pagina main_menu_page.xml -->
     <dimen name="mainMenuInputButtonWidth">250dp</dimen>
     <dimen name="mainMenuMarginStart">60dp</dimen>
+    <dimen name="addBillWidthInput">300dp</dimen>
+    <dimen name="addBillHeightInput">50dp</dimen>
 
 </resources>

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f9f9f9">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- AppBar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
@@ -30,7 +29,7 @@
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Controle Financeiro"
+                    android:text="Adicionar Conta"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -39,20 +38,21 @@
                     app:layout_constraintHorizontal_bias="0.167"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.567" />
+                    app:layout_constraintVertical_bias="0.567"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="19dp" />
 
                 <ImageButton
                     android:id="@+id/btn_sair"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginEnd="32dp"
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Sair"
                     android:src="@drawable/logout"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.551" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,49 +60,55 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="82dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintStart_toStartOf="@+id/btnListPayments"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:srcCompat="@drawable/app_logo" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnListPayments"
-        android:layout_width="@dimen/mainMenuInputButtonWidth"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mainMenuMarginStart"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/button_background"
-        android:text="Lista De Contas"
-        android:textColor="@color/black"
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Descrição da Conta"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAddPayments"
-        android:layout_width="@dimen/mainMenuInputButtonWidth"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/button_background"
-        android:padding="10dp"
-        android:text="Adicionar Conta"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/btnListPayments"
-        app:layout_constraintTop_toBottomOf="@+id/btnListPayments" />
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Categoria"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCoins"
-        android:layout_width="@dimen/mainMenuInputButtonWidth"
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Valor"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/button_background"
-        android:text="Cotação de Moedas"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/btnAddPayments"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddPayments" />
+        android:layout_marginTop="160dp"
+        android:text="Adicionar "
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

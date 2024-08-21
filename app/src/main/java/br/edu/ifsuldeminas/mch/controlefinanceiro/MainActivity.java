@@ -1,32 +1,45 @@
 package br.edu.ifsuldeminas.mch.controlefinanceiro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputEditText txtUser, txtPassword;
-    Button btnEnter;
-
+    private EditText usernameInput;
+    private EditText passwordInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        txtUser = findViewById(R.id.loginMenuInputName);
-        txtPassword = findViewById(R.id.loginMenuInputPassword);
+        // Obtém o EditText de dentro do TextInputLayout
+        TextInputLayout usernameLayout = findViewById(R.id.loginMenuInputName);
+        TextInputLayout passwordLayout = findViewById(R.id.loginMenuInputPassword);
 
-        btnEnter = findViewById(R.id.loginMenuButtonEnter);
-        btnEnter.setOnClickListener(view -> {
-            if (txtUser.getText().toString().equals("admin") && txtPassword.getText().toString().equals("admin")) {
-                Intent intentForm = new Intent(MainActivity.this, MenuActivity.class);
-                startActivity(intentForm);
+        usernameInput = usernameLayout.getEditText();
+        passwordInput = passwordLayout.getEditText();
+
+        Button loginButton = findViewById(R.id.loginMenuButtonEnter);
+
+        loginButton.setOnClickListener(v -> {
+            String username = usernameInput.getText().toString();
+            String password = passwordInput.getText().toString();
+
+            if (username.equals("admin") && password.equals("admin")) {
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                intent.putExtra("USERNAME", username);
+                startActivity(intent);
+            } else {
+                Toast.makeText(MainActivity.this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show();
             }
         });
     }
