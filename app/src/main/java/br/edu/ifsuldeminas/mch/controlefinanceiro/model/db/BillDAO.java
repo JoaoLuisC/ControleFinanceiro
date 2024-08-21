@@ -12,7 +12,7 @@ import br.edu.ifsuldeminas.mch.controlefinanceiro.model.Bill;
 
 public class BillDAO extends DAO {
 
-    BillDAO(Context context) {
+    public BillDAO(Context context) {
         super(context);
     }
 

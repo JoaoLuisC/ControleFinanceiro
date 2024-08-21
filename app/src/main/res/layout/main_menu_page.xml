@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnListPayments" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCoins"
+        android:id="@+id/btnCoinsList"
         android:layout_width="@dimen/mainMenuInputButtonWidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"

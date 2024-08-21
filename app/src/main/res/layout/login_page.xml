@@ -73,6 +73,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="@dimen/loginMenuInputButtonWidth"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:background="@drawable/button_background"
             android:textColor="@color/black"
             tools:ignore="SpeakableTextPresentCheck" />

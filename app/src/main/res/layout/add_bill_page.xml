@@ -61,52 +61,52 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextDesc"
         android:layout_width="@dimen/addBillWidthInput"
         android:layout_height="@dimen/addBillHeightInput"
         android:layout_marginTop="140dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Descrição da Conta"
+        android:hint="Descrição da Conta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextCategory"
         android:layout_width="@dimen/addBillWidthInput"
         android:layout_height="@dimen/addBillHeightInput"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Categoria"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        android:hint="Categoria"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDesc"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="@+id/editTextDesc"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDesc" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextValue"
         android:layout_width="@dimen/addBillWidthInput"
         android:layout_height="@dimen/addBillHeightInput"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Valor"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        android:hint="Valor"
+        app:layout_constraintEnd_toEndOf="@+id/editTextCategory"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/editTextCategory"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnAddBill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:text="Adicionar "
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextValue"
+        app:layout_constraintStart_toStartOf="@+id/editTextValue"
+        app:layout_constraintTop_toBottomOf="@+id/editTextValue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

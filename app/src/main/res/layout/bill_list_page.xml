@@ -29,7 +29,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageLogoListPage"
         app:layout_constraintTop_toTopOf="@+id/imageLogoListPage" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ListView
+            android:id="@+id/bill_list"
             android:layout_width="0dp"
             android:layout_height="549dp"
             android:layout_marginLeft="20dp"
@@ -38,5 +39,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageLogoListPage" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

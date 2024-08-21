@@ -2,6 +2,8 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro.model;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Bill implements Serializable {
@@ -9,6 +11,10 @@ public class Bill implements Serializable {
     private Integer id;
     private String description, category;
     private Double value;
+
+    public Bill() {
+
+    }
 
     public Bill(Integer id, String description, String category, Double value) {
         this.id = id;
@@ -44,5 +50,11 @@ public class Bill implements Serializable {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "R$" + this.getValue() + " - " + this.getDescription();
     }
 }
