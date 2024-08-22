@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/styleForSetupPages">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -82,12 +81,19 @@
         app:layout_constraintTop_toBottomOf="@+id/detailTxtName" />
 
     <TextView
-        android:id="@+id/txtDescricao"
+        android:id="@+id/detailTxtValue"
         style="@style/styleForTextViews"
-        android:layout_marginTop="76dp"
-        android:text="Descrição:"
+        android:text="R$ 00,00"
+        app:layout_constraintEnd_toEndOf="@+id/detailTxtDateBill"
+        app:layout_constraintTop_toTopOf="@+id/txtValor" />
+
+    <TextView
+        android:id="@+id/txtDataDaConta"
+        style="@style/styleForTextViews"
+        android:layout_marginTop="56dp"
+        android:text="Data da Conta:"
         app:layout_constraintStart_toStartOf="@+id/txtValor"
-        app:layout_constraintTop_toBottomOf="@+id/txtDataDaConta" />
+        app:layout_constraintTop_toBottomOf="@+id/txtValor" />
 
     <TextView
         android:id="@+id/detailTxtDateBill"
@@ -97,12 +103,12 @@
         app:layout_constraintTop_toTopOf="@+id/txtDataDaConta" />
 
     <TextView
-        android:id="@+id/txtDataDaConta"
+        android:id="@+id/txtDescricao"
         style="@style/styleForTextViews"
-        android:layout_marginTop="56dp"
-        android:text="Data da Conta:"
+        android:layout_marginTop="76dp"
+        android:text="Descrição:"
         app:layout_constraintStart_toStartOf="@+id/txtValor"
-        app:layout_constraintTop_toBottomOf="@+id/txtValor" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDataDaConta" />
 
     <TextView
         android:id="@+id/detailTxtDescription"
@@ -117,19 +123,14 @@
         app:layout_constraintStart_toStartOf="@+id/txtDescricao"
         app:layout_constraintTop_toTopOf="@+id/txtDescricao" />
 
-    <TextView
-        android:id="@+id/detailTxtValue"
-        style="@style/styleForTextViews"
-        android:text="R$ 00,00"
-        app:layout_constraintEnd_toEndOf="@+id/detailTxtDateBill"
-        app:layout_constraintTop_toTopOf="@+id/txtValor" />
+
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/detailBtnShare"
         android:layout_width="133dp"
         android:layout_height="48dp"
-        android:layout_marginTop="44dp"
-        android:text="Button"
+        android:layout_marginTop="48dp"
+        android:text="Compartilhar"
         app:layout_constraintEnd_toEndOf="@+id/detailTxtDescription"
         app:layout_constraintTop_toBottomOf="@+id/detailTxtDescription" />
 

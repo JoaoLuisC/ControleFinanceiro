@@ -17,5 +17,26 @@
         <item name="android:backgroundTint">@color/transparent</item>
     </style>
 
+    <style name="styleForSetupPages">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#f9f9f9</item>
+    </style>
+
+    <style name="styleForLoginPageTextsForInputs">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/loginMenuTextSize</item>
+    </style>
+
+    <style name="styleForLoginPageInputText">
+        <item name="android:layout_width">@dimen/loginMenuInputButtonWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
 </resources>
