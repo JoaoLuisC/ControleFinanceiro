@@ -5,6 +5,8 @@
 
     <color name="borderButton">#073340</color>
 
+    <color name="transparent">#0000</color>
+
 
 
 </resources>

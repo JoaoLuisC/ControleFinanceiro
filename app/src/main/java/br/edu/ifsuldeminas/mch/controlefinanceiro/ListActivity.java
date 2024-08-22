@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +30,25 @@ public class ListActivity extends AppCompatActivity {
 
         billsList = findViewById(R.id.bill_list);
         registerForContextMenu(billsList);
+
+        Button btnAdicionar = findViewById(R.id.listBillBtnAdd);
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListActivity.this, AddActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        Button btnListagem = findViewById(R.id.listBillBtnList);
+        btnListagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // O botão Listagem já está na ListActivity, não faz sentido criar uma nova Intent para a mesma Activity
+                Toast.makeText(ListActivity.this, "Você já está na tela de Listagem.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         billsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

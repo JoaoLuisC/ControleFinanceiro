@@ -8,6 +8,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView();
+        setContentView(R.layout.detail_bill_page);
     }
 }

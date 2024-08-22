@@ -2,6 +2,7 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,6 +27,25 @@ public class AddActivity extends AppCompatActivity {
 
         Intent chooserIntent = getIntent();
         bill = (Bill) chooserIntent.getSerializableExtra("contaEdicao");
+
+        Button btnAdicionar = findViewById(R.id.addBillBtnAdd);
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AddActivity.this, "Você já está na tela de Listagem.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btnListagem = findViewById(R.id.addBillBtnList);
+        btnListagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this, ListActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
 
         EditText descTextInput = findViewById(R.id.editTextDesc);
         EditText categoryTextInput = findViewById(R.id.editTextCategory);
