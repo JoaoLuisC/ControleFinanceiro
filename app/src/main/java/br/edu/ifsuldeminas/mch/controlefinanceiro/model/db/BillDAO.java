@@ -20,9 +20,10 @@ public class BillDAO extends DAO {
         SQLiteDatabase dataBase = openToWrite();
 
         ContentValues contentValues = new ContentValues();
+        contentValues.put("name", bill.getName());
         contentValues.put("description", bill.getDescription());
-        contentValues.put("category", bill.getCategory());
         contentValues.put("value", bill.getValue());
+        contentValues.put("date", bill.getDate());
 
         dataBase.insert("bills", null, contentValues);
 
@@ -39,11 +40,12 @@ public class BillDAO extends DAO {
 
         while (cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
-            String description = cursor.getString(
-                    cursor.getColumnIndexOrThrow("description"));
-            String category = cursor.getString(cursor.getColumnIndexOrThrow("category"));
+            String name = cursor.getString(
+                    cursor.getColumnIndexOrThrow("name"));
+            String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
             Double value = cursor.getDouble(cursor.getColumnIndexOrThrow("value"));
-            Bill bill = new Bill(id, description, category, value);
+            String date = cursor.getString(cursor.getColumnIndexOrThrow("date"));
+            Bill bill = new Bill(id, name, description, value, date);
             bills.add(bill);
         }
         cursor.close();
@@ -64,9 +66,10 @@ public class BillDAO extends DAO {
         SQLiteDatabase dataBase = openToWrite();
 
         ContentValues contentValues = new ContentValues();
+        contentValues.put("name", bill.getName());
         contentValues.put("description", bill.getDescription());
-        contentValues.put("category", bill.getCategory());
         contentValues.put("value", bill.getValue());
+        contentValues.put("date", bill.getDate());
 
         String[] params = {bill.getId().toString()};
         dataBase.update("bills", contentValues, "id = ?", params);

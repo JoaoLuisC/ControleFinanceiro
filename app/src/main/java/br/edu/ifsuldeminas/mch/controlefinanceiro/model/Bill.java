@@ -1,7 +1,5 @@
 package br.edu.ifsuldeminas.mch.controlefinanceiro.model;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
@@ -9,18 +7,19 @@ import java.io.Serializable;
 public class Bill implements Serializable {
 
     private Integer id;
-    private String description, category;
+    private String name, description, date;
     private Double value;
 
     public Bill() {
 
     }
 
-    public Bill(Integer id, String description, String category, Double value) {
+    public Bill(Integer id, String name, String description, Double value, String date) {
         this.id = id;
+        setName(name);
         setDescription(description);
-        setCategory(category);
         setValue(value);
+        setDate(date);
     }
 
 
@@ -28,20 +27,28 @@ public class Bill implements Serializable {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public Double getValue() {
@@ -55,6 +62,6 @@ public class Bill implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return "R$" + this.getValue() + " - " + this.getDescription();
+        return "R$" + this.getValue() + " - " + this.getName() + " - " + this.getDate();
     }
 }

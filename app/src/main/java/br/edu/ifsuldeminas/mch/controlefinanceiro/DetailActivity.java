@@ -41,10 +41,10 @@ public class DetailActivity extends AppCompatActivity {
     // Método para popular os TextViews com os detalhes da conta
     private void populateDetails() {
         if (bill != null) {
-            detailTxtName.setText(bill.getCategory());
+            detailTxtName.setText(bill.getName());
             detailTxtValue.setText("R$ " + String.format("%.2f", bill.getValue()));
-            detailTxtDateBill.setText("00/00/0000"); // placeholder para a data
-            detailTxtDescription.setText("Lorem ipsum dolor sit amet..."); // placeholder para a descrição
+            detailTxtDateBill.setText(bill.getDate());
+            detailTxtDescription.setText(bill.getDescription());
         }
     }
 
@@ -52,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
     private void shareBillDetails() {
         if (bill != null) {
             String message = String.format("Conta: %s\nValor: R$ %.2f\nCategoria: %s\nDescrição: %s",
-                    bill.getCategory(), bill.getValue(), bill.getCategory(), detailTxtDescription.getText().toString());
+                    bill.getDescription(), bill.getValue(), bill.getDescription(), detailTxtDescription.getText().toString());
 
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);

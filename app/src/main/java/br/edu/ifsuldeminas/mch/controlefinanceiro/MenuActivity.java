@@ -52,8 +52,10 @@ public class MenuActivity extends AppCompatActivity {
 //            startActivity(intent);
         });
 
-
-        String username = getIntent().getStringExtra("USERNAME");
-        Toast.makeText(this, "Bem-vindo, " + username + "!", Toast.LENGTH_SHORT).show();
+        if (getIntent().hasExtra("USERNAME")) {
+            String username = getIntent().getStringExtra("USERNAME");
+            Toast.makeText(this, "Bem-vindo, " + username + "!", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }
