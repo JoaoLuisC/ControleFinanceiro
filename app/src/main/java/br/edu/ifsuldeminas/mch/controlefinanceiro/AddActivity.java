@@ -106,7 +106,7 @@ public class AddActivity extends AppCompatActivity {
             String name = nameTextInput.getText().toString();
             String description = descTextInput.getText().toString();
             String date = dateTextInput.getText().toString();
-            String value = valueTextInput.getText().toString();
+            String value = valueTextInput.getText().toString().replace(",", ".");
 
             if (name.isEmpty() || description.isEmpty() || date.isEmpty() || value.isEmpty()) {
                 Toast toast = Toast.makeText(AddActivity.this, "Preencha todos os campos!", Toast.LENGTH_SHORT);
@@ -118,7 +118,9 @@ public class AddActivity extends AppCompatActivity {
                     bill.setName(name);
                     bill.setDescription(description);
                     bill.setDate(date);
+                    value = value.replace(",", ".");
                     bill.setValue(Double.parseDouble(value));
+
 
                     dao.save(bill);
                     Toast toast = Toast.makeText(this, "Conta salva com sucesso!", Toast.LENGTH_LONG);

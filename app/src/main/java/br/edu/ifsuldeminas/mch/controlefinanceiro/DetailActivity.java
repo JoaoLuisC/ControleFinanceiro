@@ -60,7 +60,7 @@ public class DetailActivity extends AppCompatActivity {
     private void populateDetails() {
         if (bill != null) {
             detailTxtName.setText(bill.getName());
-            detailTxtValue.setText("R$ " + String.format("%.2f", bill.getValue()));
+            detailTxtValue.setText(bill.getValue().toString());
             detailTxtDateBill.setText(bill.getDate());
             detailTxtDescription.setText(bill.getDescription());
         }
