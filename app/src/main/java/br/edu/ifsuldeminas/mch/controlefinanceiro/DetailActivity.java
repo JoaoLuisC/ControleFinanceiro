@@ -2,7 +2,9 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,7 @@ import br.edu.ifsuldeminas.mch.controlefinanceiro.model.Bill;
 public class DetailActivity extends AppCompatActivity {
 
     private TextView detailTxtName, detailTxtValue, detailTxtDateBill, detailTxtDescription;
-    private Button btnShare;
+    private ImageButton btnShare, btnBackToList;
     private Bill bill;
 
     @Override
@@ -33,9 +35,25 @@ public class DetailActivity extends AppCompatActivity {
             populateDetails();
         }
 
+        btnBackToList = findViewById(R.id.btnBackToList);
+        btnBackToList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailActivity.this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         // Implementação do botão de compartilhar
         btnShare = findViewById(R.id.detailBtnShare);
-        btnShare.setOnClickListener(view -> shareBillDetails());
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareBillDetails();
+            }
+        });
     }
 
     // Método para popular os TextViews com os detalhes da conta
@@ -48,11 +66,19 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+
     // Método para compartilhar os detalhes da conta
     private void shareBillDetails() {
         if (bill != null) {
-            String message = String.format("Conta: %s\nValor: R$ %.2f\nCategoria: %s\nDescrição: %s",
-                    bill.getDescription(), bill.getValue(), bill.getDescription(), detailTxtDescription.getText().toString());
+            String message = String.format(
+                    "-------- Financial Management -------\n" +
+                            "Conta: %s\n" +
+                            "Valor: R$ %.2f\n" +
+                            "Data: %s\n" +
+                            "Descrição: %s\n",
+                    bill.getName(), bill.getValue(), bill.getDate(), bill.getDescription()
+            );
+
 
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);

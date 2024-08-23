@@ -73,9 +73,10 @@ public class ListActivity extends AppCompatActivity {
         BillDAO dao = new BillDAO(this);
         List<Bill> billList = dao.loadBills();
 
-        ArrayAdapter<Bill> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, billList);
+        ArrayAdapter<Bill> arrayAdapter = new ArrayAdapter<>(this, R.layout.item_list_style, R.id.text1, billList);
         billsList.setAdapter(arrayAdapter);
     }
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {

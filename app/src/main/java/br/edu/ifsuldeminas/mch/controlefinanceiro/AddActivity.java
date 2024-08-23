@@ -25,7 +25,7 @@ public class AddActivity extends AppCompatActivity {
 
     Button btnAdd;
 
-    ImageView btnDatePicker;
+    ImageView btnDatePicker, btnLogo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,18 @@ public class AddActivity extends AppCompatActivity {
 
         Intent chooserIntent = getIntent();
         bill = (Bill) chooserIntent.getSerializableExtra("contaEdicao");
+
+        btnLogo = findViewById(R.id.addBillImageLogo);
+        btnLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this, MenuActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+
 
         Button btnAdicionar = findViewById(R.id.addBillBtnAdd);
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +62,7 @@ public class AddActivity extends AppCompatActivity {
                 Intent intent = new Intent(AddActivity.this, ListActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
             }
         });
 
