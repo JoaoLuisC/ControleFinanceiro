@@ -45,11 +45,8 @@ public class MenuActivity extends AppCompatActivity {
 
         Button btnCoins = findViewById(R.id.btnCoinsList);
         btnCoins.setOnClickListener(view -> {
-
-            Toast toast = Toast.makeText(MenuActivity.this, "Será disponível na versão 2.0!", Toast.LENGTH_SHORT);
-            toast.show();
-//            Intent intent = new Intent(MenuActivity.this, CoinsActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MenuActivity.this, CoinsActivity.class);
+            startActivity(intent);
         });
 
         if (getIntent().hasExtra("USERNAME")) {
