@@ -19,7 +19,7 @@ import java.util.Locale;
 import br.edu.ifsuldeminas.mch.controlefinanceiro.model.Bill;
 import br.edu.ifsuldeminas.mch.controlefinanceiro.model.db.BillDAO;
 
-public class AddActivity extends AppCompatActivity {
+public class AddBillsActivity extends AppCompatActivity {
 
     private Bill bill;
 
@@ -39,7 +39,7 @@ public class AddActivity extends AppCompatActivity {
         btnLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddActivity.this, MenuActivity.class);
+                Intent intent = new Intent(AddBillsActivity.this, MenuActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
@@ -47,11 +47,11 @@ public class AddActivity extends AppCompatActivity {
         });
 
 
-        Button btnAdicionar = findViewById(R.id.addBillBtnAdd);
+        Button btnAdicionar = findViewById(R.id.addTransactionBtnAdd);
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AddActivity.this, "Você já está na tela de Listagem.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddBillsActivity.this, "Você já está na tela de Adicionar.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -59,7 +59,7 @@ public class AddActivity extends AppCompatActivity {
         btnListagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddActivity.this, ListActivity.class);
+                Intent intent = new Intent(AddBillsActivity.this, ListBillsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
@@ -68,7 +68,7 @@ public class AddActivity extends AppCompatActivity {
 
         EditText nameTextInput = findViewById(R.id.editTextName);
         EditText descTextInput = findViewById(R.id.editTextDesc);
-        EditText valueTextInput = findViewById(R.id.editTextValue);
+        EditText valueTextInput = findViewById(R.id.editTextType);
 
         //deixar EditText da data sem poder clicar/editar
         EditText dateTextInput = findViewById(R.id.editTextDate);
@@ -109,7 +109,7 @@ public class AddActivity extends AppCompatActivity {
             String value = valueTextInput.getText().toString().replace(",", ".");
 
             if (name.isEmpty() || description.isEmpty() || date.isEmpty() || value.isEmpty()) {
-                Toast toast = Toast.makeText(AddActivity.this, "Preencha todos os campos!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(AddBillsActivity.this, "Preencha todos os campos!", Toast.LENGTH_SHORT);
                 toast.show();
             } else {
                 BillDAO dao = new BillDAO(this);

@@ -20,7 +20,7 @@ import java.util.List;
 import br.edu.ifsuldeminas.mch.controlefinanceiro.model.Bill;
 import br.edu.ifsuldeminas.mch.controlefinanceiro.model.db.BillDAO;
 
-public class ListActivity extends AppCompatActivity {
+public class ListBillsActivity extends AppCompatActivity {
 
     ListView billsList;
 
@@ -38,7 +38,7 @@ public class ListActivity extends AppCompatActivity {
         btnLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListActivity.this, MenuActivity.class);
+                Intent intent = new Intent(ListBillsActivity.this, MenuActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
@@ -49,7 +49,7 @@ public class ListActivity extends AppCompatActivity {
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListActivity.this, AddActivity.class);
+                Intent intent = new Intent(ListBillsActivity.this, AddBillsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
@@ -60,7 +60,7 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // O botão Listagem já está na ListActivity, não faz sentido criar uma nova Intent para a mesma Activity
-                Toast.makeText(ListActivity.this, "Você já está na tela de Listagem.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListBillsActivity.this, "Você já está na tela de Listagem.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,7 +70,7 @@ public class ListActivity extends AppCompatActivity {
 
                 Bill bill = (Bill) billsList.getItemAtPosition(position);
 
-                Intent intent = new Intent(ListActivity.this, DetailActivity.class);
+                Intent intent = new Intent(ListBillsActivity.this, DetailBillsActivity.class);
                 intent.putExtra("contaDetalhada", bill);
                 startActivity(intent);
             }
@@ -101,12 +101,12 @@ public class ListActivity extends AppCompatActivity {
                 AdapterView.AdapterContextMenuInfo itemClicado = (AdapterView.AdapterContextMenuInfo) menuInfo;
                 Bill bill = (Bill) billsList.getItemAtPosition(itemClicado.position);
 
-                BillDAO dao = new BillDAO(ListActivity.this);
+                BillDAO dao = new BillDAO(ListBillsActivity.this);
 
                 dao.delete(bill);
                 updateBills();
 
-                Toast toast = Toast.makeText(ListActivity.this, "Conta deletada com sucesso!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(ListBillsActivity.this, "Conta deletada com sucesso!", Toast.LENGTH_SHORT);
                 toast.show();
 
                 return true;
@@ -120,7 +120,7 @@ public class ListActivity extends AppCompatActivity {
                 AdapterView.AdapterContextMenuInfo itemClicado = (AdapterView.AdapterContextMenuInfo) menuInfo;
                 Bill bill = (Bill) billsList.getItemAtPosition(itemClicado.position);
 
-                Intent intent = new Intent(ListActivity.this, AddActivity.class);
+                Intent intent = new Intent(ListBillsActivity.this, AddBillsActivity.class);
                 intent.putExtra("contaEdicao", bill);
                 startActivity(intent);
 

@@ -31,15 +31,27 @@ public class MenuActivity extends AppCompatActivity {
             finish();
         });
 
-        Button btnAddBill = findViewById(R.id.btnAddPayments);
+        Button btnAddBill = findViewById(R.id.btnAddBills);
         btnAddBill.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuActivity.this, AddActivity.class);
+            Intent intent = new Intent(MenuActivity.this, AddBillsActivity.class);
             startActivity(intent);
         });
 
-        Button btnList = findViewById(R.id.btnListPayments);
-        btnList.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuActivity.this, ListActivity.class);
+        Button btnAddTransaction = findViewById(R.id.btnAddTransactions);
+        btnAddTransaction.setOnClickListener(view -> {
+            Intent intent = new Intent(MenuActivity.this, AddTransactionActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnListBills = findViewById(R.id.btnListBills);
+        btnListBills.setOnClickListener(view -> {
+            Intent intent = new Intent(MenuActivity.this, ListBillsActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnListTransactions = findViewById(R.id.btnListTransactions);
+        btnListTransactions.setOnClickListener(view -> {
+            Intent intent = new Intent(MenuActivity.this, ListTransactionsActivity.class);
             startActivity(intent);
         });
 

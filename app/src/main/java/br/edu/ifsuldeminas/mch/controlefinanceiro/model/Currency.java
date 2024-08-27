@@ -2,7 +2,9 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro.model;
 
 import androidx.annotation.NonNull;
 
-public class Currency {
+import java.io.Serializable;
+
+public class Currency implements Serializable {
     private String code;
     private String codein;
     private String name;

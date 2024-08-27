@@ -40,7 +40,7 @@
                     app:srcCompat="@drawable/text_logo" />
 
                 <Button
-                    android:id="@+id/addBillBtnList"
+                    android:id="@+id/addTransactionBtnList"
                     style="@style/styleForBtnTransparent"
                     android:layout_marginEnd="28dp"
                     android:text="Listagem"
@@ -54,9 +54,9 @@
                     style="@style/styleForBtnTransparent"
                     android:layout_marginEnd="16dp"
                     android:text="Adicionar"
-                    app:layout_constraintBottom_toBottomOf="@+id/addBillBtnList"
+                    app:layout_constraintBottom_toBottomOf="@+id/addTransactionBtnList"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/addBillBtnList"
+                    app:layout_constraintTop_toTopOf="@+id/addTransactionBtnList"
                     app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,14 +65,14 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextAmount"
         android:layout_width="@dimen/addBillWidthInput"
         android:layout_height="@dimen/addBillHeightInput"
         android:layout_marginTop="140dp"
         android:background="@drawable/button_background"
         android:ems="10"
-        android:hint="Nome da Conta"
-        android:inputType="text"
+        android:hint="Valor da Transação"
+        android:inputType="numberDecimal"
         android:textColor="@color/black"
 
 
@@ -87,24 +87,24 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/button_background"
         android:ems="10"
-        android:hint="Descrição"
+        android:hint="Descrição da Transação"
         android:inputType="text"
         android:textColor="@color/black"
 
-        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAmount"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintStart_toStartOf="@+id/editTextAmount"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAmount" />
 
     <EditText
-        android:id="@+id/editTextValue"
+        android:id="@+id/editTextType"
         android:layout_width="@dimen/addBillWidthInput"
         android:layout_height="@dimen/addBillHeightInput"
         android:layout_marginTop="36dp"
         android:background="@drawable/button_background"
         android:ems="10"
-        android:hint="Valor"
-        android:inputType="number"
+        android:hint="Tipo de Transação"
+        android:inputType="text"
 
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/editTextDesc"
@@ -113,41 +113,17 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextDesc" />
 
     <Button
-        android:id="@+id/btnAddBill"
+        android:id="@+id/btnAddTransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="80dp"
 
         android:backgroundTint="@color/backgroundTollBar"
-        android:text="Adicionar "
-        app:layout_constraintEnd_toEndOf="@+id/editTextValue"
-        app:layout_constraintStart_toStartOf="@+id/editTextValue"
-        app:layout_constraintTop_toBottomOf="@+id/editTextValue" />
+        android:text="Adicionar"
+        app:layout_constraintEnd_toEndOf="@+id/editTextType"
+        app:layout_constraintStart_toStartOf="@+id/editTextType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="300dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/button_background"
-        android:ems="10"
-        android:hint="Data da compra"
-        android:inputType="date"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/editTextValue"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextValue"
-        app:layout_constraintTop_toBottomOf="@+id/editTextValue" />
-
-    <ImageView
-        android:id="@+id/btnIconDatePicker"
-        android:layout_width="28dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextDate"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDate"
-        app:layout_constraintTop_toTopOf="@+id/editTextDate"
-        app:srcCompat="@drawable/baseline_calendar_month_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

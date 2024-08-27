@@ -3,7 +3,6 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import br.edu.ifsuldeminas.mch.controlefinanceiro.model.Bill;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailBillsActivity extends AppCompatActivity {
 
     private TextView detailTxtName, detailTxtValue, detailTxtDateBill, detailTxtDescription;
     private ImageButton btnShare, btnBackToList;
@@ -39,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         btnBackToList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailActivity.this, MenuActivity.class);
+                Intent intent = new Intent(DetailBillsActivity.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }

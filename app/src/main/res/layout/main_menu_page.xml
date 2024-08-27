@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/styleForSetupPages">
 
     <!-- AppBar -->
@@ -68,38 +69,61 @@
         app:srcCompat="@drawable/text_logo" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnListPayments"
+        android:id="@+id/btnListBills"
         android:layout_width="@dimen/mainMenuInputButtonWidth"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/button_background"
         android:text="Lista De Contas"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnAddTransactions"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddTransactions" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnListTransactions"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:text="Lista De Transações"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnListBills"
+        app:layout_constraintTop_toBottomOf="@+id/btnListBills" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddTransactions"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Adicionar Transação"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnAddBills"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddBills" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddBills"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Adicionar Conta"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAddPayments"
-        android:layout_width="@dimen/mainMenuInputButtonWidth"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/button_background"
-        android:padding="10dp"
-        android:text="Adicionar Conta"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/btnListPayments"
-        app:layout_constraintTop_toBottomOf="@+id/btnListPayments" />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCoinsList"
         android:layout_width="@dimen/mainMenuInputButtonWidth"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/button_background"
         android:text="Cotação de Moedas"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/btnAddPayments"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddPayments" />
+        app:layout_constraintStart_toStartOf="@+id/btnListTransactions"
+        app:layout_constraintTop_toBottomOf="@+id/btnListTransactions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
