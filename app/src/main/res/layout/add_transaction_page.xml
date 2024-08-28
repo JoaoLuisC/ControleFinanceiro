@@ -112,18 +112,41 @@
         app:layout_constraintStart_toStartOf="@+id/editTextDesc"
         app:layout_constraintTop_toBottomOf="@+id/editTextDesc" />
 
+
+    <Spinner
+        android:id="@+id/spinnerIsento"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_background"
+        android:hint="Isento"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDesc"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
+
     <Button
         android:id="@+id/btnAddTransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
 
+        android:layout_marginTop="80dp"
         android:backgroundTint="@color/backgroundTollBar"
         android:text="Adicionar"
-        app:layout_constraintEnd_toEndOf="@+id/editTextType"
-        app:layout_constraintStart_toStartOf="@+id/editTextType"
-        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
+        app:layout_constraintEnd_toEndOf="@+id/spinnerIsento"
+        app:layout_constraintStart_toStartOf="@+id/spinnerIsento"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerIsento" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="21dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerIsento"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerIsento"
+        app:layout_constraintTop_toTopOf="@+id/spinnerIsento"
+        app:srcCompat="@drawable/baseline_keyboard_arrow_down_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

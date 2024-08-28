@@ -50,7 +50,7 @@ public class ListTransactionsActivity extends AppCompatActivity implements DAOOb
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListTransactionsActivity.this, AddBillsActivity.class);
+                Intent intent = new Intent(ListTransactionsActivity.this, AddTransactionActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
@@ -64,17 +64,6 @@ public class ListTransactionsActivity extends AppCompatActivity implements DAOOb
             }
         });
 
-        transactionsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Transaction transaction = (Transaction) transactionsList.getItemAtPosition(position);
-
-//                Intent intent = new Intent(ListTransactionsActivity.this, DetailBillsActivity.class);
-//                intent.putExtra("transacaoDetalhada", transaction);
-//                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -98,11 +87,11 @@ public class ListTransactionsActivity extends AppCompatActivity implements DAOOb
             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
                 AdapterView.AdapterContextMenuInfo itemClicado =
                         (AdapterView.AdapterContextMenuInfo) menuInfo;
-                Transaction task = (Transaction)
+                Transaction transaction = (Transaction)
                         transactionsList.getItemAtPosition(itemClicado.position);
 
                 TransactionDAO dao = new TransactionDAO(ListTransactionsActivity.this);
-                dao.delete(task);
+                dao.delete(transaction);
 
                 updateTransactions();
 
@@ -110,13 +99,28 @@ public class ListTransactionsActivity extends AppCompatActivity implements DAOOb
             }
         });
 
-        MenuItem itemFinish = menu.add("Editar transação");
+        MenuItem itemEdit = menu.add("Editar transação");
+        itemEdit.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(@NonNull MenuItem item) {
+                AdapterView.AdapterContextMenuInfo itemClicado =
+                        (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Transaction transaction = (Transaction)
+                        transactionsList.getItemAtPosition(itemClicado.position);
+
+                Intent intent = new Intent(ListTransactionsActivity.this, AddTransactionActivity.class);
+                intent.putExtra("transacaoEdicao", transaction);
+                startActivity(intent);
+
+                return true;
+            }
+        });
     }
 
     @Override
     public void loadOk(List<Transaction> transaction) {
         ArrayAdapter<Transaction> arrayAdapter =
-                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, transaction);
+                new ArrayAdapter<>(this, R.layout.item_list_style, R.id.text1, transaction);
 
         transactionsList.setAdapter(arrayAdapter);
     }

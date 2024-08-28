@@ -1,6 +1,8 @@
 package br.edu.ifsuldeminas.mch.controlefinanceiro.model.db;
 
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +30,7 @@ public class TransactionDAO {
     private static final String AMOUNT = "amount";
     private static final String DESCRIPTION = "description";
     private static final String TYPE = "type";
+    private static final String ISTAXEXEMPT = "isTaxExempt";
 
     public TransactionDAO(DAOObserver observer) {
         this.observer = observer;
@@ -38,6 +41,7 @@ public class TransactionDAO {
         map.put(AMOUNT, transaction.getAmount());
         map.put(DESCRIPTION, transaction.getDescription());
         map.put(TYPE, transaction.getType());
+        map.put(ISTAXEXEMPT, transaction.isTaxExempt());
         return map;
     }
 
@@ -71,8 +75,9 @@ public class TransactionDAO {
                         Double amount = doc.get(AMOUNT, Double.class);
                         String description = doc.get(DESCRIPTION, String.class);
                         String type = doc.get(TYPE, String.class);
+                        Boolean isTaxExempt = doc.get(ISTAXEXEMPT, Boolean.class);
 
-                        Transaction transaction = new Transaction(id, amount, description, type);
+                        Transaction transaction = new Transaction(id, amount, description, type, isTaxExempt);
 
                         transactions.add(transaction);
                     }
@@ -80,6 +85,10 @@ public class TransactionDAO {
                     observer.loadOk(transactions);
                 } else {
                     // Não há tarefas no banco...
+                    Exception exception = taskSnap.getException();
+                    if (exception != null) {
+                        Log.d("Firestore Error", "Erro ao carregar dados: ", exception);
+                    }
                     observer.loadError();
                 }
             }

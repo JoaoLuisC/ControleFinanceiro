@@ -10,16 +10,18 @@ public class Transaction implements Serializable {
     private Double amount;
     private String description;
     private String type;
+    private boolean isTaxExempt;
 
 
     public Transaction() {
     }
 
-    public Transaction(String id, Double amount, String description, String type) {
+    public Transaction(String id, Double amount, String description, String type, Boolean isTaxExempt) {
         this.id = id;
         this.amount = amount;
         this.description = description;
         this.type = type;
+        this.isTaxExempt = isTaxExempt;
     }
 
     public String getId() {
@@ -54,12 +56,21 @@ public class Transaction implements Serializable {
         this.type = type;
     }
 
+    public boolean isTaxExempt() {
+        return isTaxExempt;
+    }
+
+    public void setTaxExempt(boolean taxExempt) {
+        isTaxExempt = taxExempt;
+    }
+
     @NonNull
     @Override
     public String toString() {
         return
                 "R$" + amount +
-                        " - " + description +
-                        " - " + type;
+                        " - " + description + "\n" +
+                        (isTaxExempt ? "Isenta" : "Não Isenta") + " - " + type;
     }
+
 }
