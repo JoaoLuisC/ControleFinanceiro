@@ -2,11 +2,15 @@ package br.edu.ifsuldeminas.mch.controlefinanceiro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +31,26 @@ public class CoinsActivity extends AppCompatActivity {
 
     Map<String, Currency> coinsList;
 
+    private ImageButton btnBackToList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.currency_quote_page);
 
+        Toast toast = Toast.makeText(CoinsActivity.this, "Cotação de Moedas atualizada!", Toast.LENGTH_LONG);
+        toast.show();
+
+
+        btnBackToList = findViewById(R.id.btnBackToList);
+        btnBackToList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoinsActivity.this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         coinsListView = findViewById(R.id.listCoins);
 
@@ -82,7 +101,7 @@ public class CoinsActivity extends AppCompatActivity {
             currencies.add(entry.getValue());
         }
 
-        ArrayAdapter<Currency> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, currencies);
+        ArrayAdapter<Currency> arrayAdapter = new ArrayAdapter<>(this, R.layout.item_list_style, R.id.text1, currencies);
         coinsListView.setAdapter(arrayAdapter);
     }
 }

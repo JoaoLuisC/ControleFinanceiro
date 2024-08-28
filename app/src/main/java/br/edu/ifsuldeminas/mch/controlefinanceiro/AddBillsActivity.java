@@ -68,7 +68,7 @@ public class AddBillsActivity extends AppCompatActivity {
 
         EditText nameTextInput = findViewById(R.id.editTextName);
         EditText descTextInput = findViewById(R.id.editTextDesc);
-        EditText valueTextInput = findViewById(R.id.editTextType);
+        EditText valueTextInput = findViewById(R.id.editTextValue);
 
         //deixar EditText da data sem poder clicar/editar
         EditText dateTextInput = findViewById(R.id.editTextDate);
